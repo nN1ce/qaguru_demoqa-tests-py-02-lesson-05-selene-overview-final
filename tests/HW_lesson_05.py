@@ -1,4 +1,4 @@
-import os.path
+#import os.path
 
 from selene import have
 from selene.support.shared import browser
