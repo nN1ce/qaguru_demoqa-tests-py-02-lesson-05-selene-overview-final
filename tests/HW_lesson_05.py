@@ -36,6 +36,8 @@ def test_practice_form():
 
     browser.element('#submit').with_(click_by_js=True).click()     #press_enter()
 
+
+
     dialog_table = browser.element('.modal-content').element('.table')
     rows = dialog_table.all('tbody tr')
     rows.should(have.texts(
