@@ -1,34 +1,28 @@
 import os.path
-import pytest
-from selene import have, command, by, be
+from demoqa_tests.model.pages import registration_form
+from demoqa_tests.model.pages.registration_form import given_opened
+from selene import have
 from selene.support.shared import browser
+from tests import controls
 
 
-def given_opened_form():
-    browser.open('/automation-practice-form')
-    ads = browser.all('[id^=google_ads][id$=container__]')
-    ads.with_(timeout=10).should(have.size_greater_than_or_equal(3)).perform(
-        command.js.remove
-    )
+def test_to_submit_form():
 
-    if ads.with_(timeout=2).wait_until(have.size_greater_than_or_equal(2)):
-        ads.perform(command.js.remove)
-
+    pass
+    #todo_
 
 def test_fail_to_submit_form():
 
-    given_opened_form()
+    pass
 
     # todo_
 
 
 def test_practice_form():
 
-    given_opened_form()
+    registration_form.given_opened()
 
     # WHEN
-
-    # browser.open('/automation-practice-form')
 
     browser.element('#firstName').type('Evgeniy')
     browser.element('#lastName').type('Lukyanov')
@@ -58,7 +52,7 @@ def test_practice_form():
     browser.element('[for="hobbies-checkbox-3"]').click()
 
     browser.element('#uploadPicture').send_keys(
-        os.path.abspath(r'..\resources\photo.jpg')
+        os.path.abspath(r'.\resources\photo.jpg')
     )
 
     browser.element('#currentAddress').type('Russia\nSaint-P\nMoskovskaya\n20')
@@ -66,7 +60,7 @@ def test_practice_form():
     browser.element('#react-select-3-input').type('NCR').press_enter()
     browser.element('#react-select-4-input').type('Delhi').press_enter()
 
-    browser.element('#submit').with_(click_by_js=True).click()  # press_enter()
+    browser.element('#submit').with_(click_by_js=True).click()
 
     # THEN
 

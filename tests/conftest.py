@@ -10,6 +10,6 @@ def browser_management_for_hw():
     browser.config.timeout = 3
     # browser.config.browser_name = 'chrome' # and 'firefox' and 'edge' #or 'opera'
     browser.config.window_width = 1920
-    browser.config.window_height = 1080
+    browser.config.window_height = 1200
 
     yield
