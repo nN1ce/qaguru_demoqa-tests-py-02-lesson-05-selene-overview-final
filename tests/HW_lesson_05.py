@@ -16,9 +16,10 @@ def given_opened_form():
 
 
 def test_fail_to_submit_form():
+
     given_opened_form()
 
-    # to do: implement
+    # todo_
 
 
 def test_practice_form():
@@ -28,6 +29,7 @@ def test_practice_form():
     # WHEN
 
     # browser.open('/automation-practice-form')
+
     browser.element('#firstName').type('Evgeniy')
     browser.element('#lastName').type('Lukyanov')
     browser.element('#userEmail').type('evgeniy@gmail.qa')
@@ -55,9 +57,8 @@ def test_practice_form():
     browser.element('[for="hobbies-checkbox-2"]').click()
     browser.element('[for="hobbies-checkbox-3"]').click()
 
-    # browser.element('[id="uploadPicture"]').send_keys(os.path.abspath('resources\photo.jpg'))
     browser.element('#uploadPicture').send_keys(
-        r"D:\Python\Project\QA_Guru\qaguru_demoqa-tests-py-02-lesson-05-selene-overview-final\resources\photo.jpg"
+        os.path.abspath(r'..\resources\photo.jpg')
     )
 
     browser.element('#currentAddress').type('Russia\nSaint-P\nMoskovskaya\n20')
