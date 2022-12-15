@@ -3,14 +3,17 @@ from demoqa_tests.model.pages import registration_form
 from demoqa_tests.model.pages.registration_form import given_opened
 from selene import have
 from selene.support.shared import browser
+
 # from tests import controls
-from demoqa_tests import model
+# from demoqa_tests import model as app
+from demoqa_tests.model import pages as app
 
 
 def test_to_submit_form():
 
     pass
-    #todo_
+    # todo_
+
 
 def test_fail_to_submit_form():
 
@@ -21,7 +24,7 @@ def test_fail_to_submit_form():
 
 def test_practice_form():
 
-    registration_form.given_opened()
+    app.registration_form.given_opened()
 
     # WHEN
 
